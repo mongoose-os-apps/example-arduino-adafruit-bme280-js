@@ -1,12 +1,14 @@
-# MongooseOS and Arduino Adafruit BME280 example
+# BME280 sensor usage example (JavaScript)
 
-This example shows how to use MongooseOS with Arduino Adafruit BME280 library.
+## How to install this app
 
-See [quick start guide](https://mongoose-os.com/docs/#/quickstart/)
-on how to build and flash the firmware. Below is an example session:
+- Install and start [mos tool](https://mongoose-os.com/software.html)
+- Switch to the Project page, find and import this app, build and flash it:
 
-```bash
-mos build --arch esp8266
-mos flash
-mos
-```
+<p align="center">
+  <img src="https://mongoose-os.com/images/app1.gif" width="75%">
+</p>
+
+## Overview
+
+This app is a BME280 sensor usage usage example in JavaScript.

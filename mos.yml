@@ -1,9 +1,7 @@
 author: mongoose-os
-name: arduino-adafruit-bme280
-description: Arduino Adafruit BME280 app
-# arch: PLATFORM
+description: BME280 sensor usage example (JavaScript)
 version: 1.0
-skeleton_version: 2017-05-18
+
 sources:
   - src
 filesystem:
@@ -11,10 +9,14 @@ filesystem:
 libs:
   - origin: https://github.com/mongoose-os-libs/mjs
   - origin: https://github.com/mongoose-os-libs/arduino-adafruit-bme280
-tags:
-  - js
-  - arduino-adafruit-bme280
 config_schema:
   - ["i2c.enable", true]
 build_vars:
   MGOS_ENABLE_I2C: 1
+
+tags:
+  - js
+  - arduino
+  - hw
+
+skeleton_version: 2017-05-18
