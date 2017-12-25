@@ -51,17 +51,21 @@ When your device boots, the output should look like the following, watch careful
 [Dec 25 13:25:24.986] mgos_i2c_create      I2C GPIO init ok (SDA: 23, SCL: 22)
 [Dec 25 13:25:24.992] mg_rpc_channel_uart  0x3ffbc478 UART0
 [Dec 25 13:25:25.001] mgos_init            Init done, RAM: 317608 total, 275252 free, 275252 min free
-[Dec 25 13:25:25.098] ====================== Starting ============================= 
+[Dec 25 13:25:25.098] ====================== Starting =============================
 [Dec 25 13:25:25.424] mongoose_poll        New heap free LWM: 261716
-[Dec 25 13:25:27.426] Temperature: 22.960000 *C 
-[Dec 25 13:25:27.433] Humidity: 43.640000 %RH 
-[Dec 25 13:25:27.442] Pressure: 1025.687700 hPa 
-[Dec 25 13:25:29.426] Temperature: 22.970000 *C 
-[Dec 25 13:25:29.433] Humidity: 43.640000 %RH 
-[Dec 25 13:25:29.441] Pressure: 1025.714100 hPa 
-[Dec 25 13:25:31.425] Temperature: 22.960000 *C 
-[Dec 25 13:25:31.433] Humidity: 43.650000 %RH 
-[Dec 25 13:25:31.441] Pressure: 1025.692000 hPa 
+[Dec 25 13:25:27.426] Temperature: 22.960000 *C
+[Dec 25 13:25:27.433] Humidity: 43.640000 %RH
+[Dec 25 13:25:27.442] Pressure: 1025.687700 hPa
+[Dec 25 13:25:29.426] Temperature: 22.970000 *C
+[Dec 25 13:25:29.433] Humidity: 43.640000 %RH
+[Dec 25 13:25:29.441] Pressure: 1025.714100 hPa
+[Dec 25 13:25:31.425] Temperature: 22.960000 *C
+[Dec 25 13:25:31.433] Humidity: 43.650000 %RH
+[Dec 25 13:25:31.441] Pressure: 1025.692000 hPa
 ```
 
 Please note that on ESP8266 and ESP32 the pins you choose to use for I2C aren't important, just ensure your configuration is on the pins you've selected.
+
+It is well known that BME280's tend to self-warm and report higher than expected temperatures.  The tolerance of the BME280 tensor is +/-1C, however when added to heating it isn't uncommon to see temperatures as much as 1.8C higher than ambient.  You should add adjustments to your code after testing in the environment you will use the sensor using a reliable thermometer.  Please do not report excessive temps as a Mongoose bug.
+
+Tested using Adafruit BME280 and Adafruit Huzzah32 (Pins 22 and 23).
