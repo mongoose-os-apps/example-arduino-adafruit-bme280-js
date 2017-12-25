@@ -66,6 +66,6 @@ When your device boots, the output should look like the following, watch careful
 
 Please note that on ESP8266 and ESP32 the pins you choose to use for I2C aren't important, just ensure your configuration is on the pins you've selected.
 
-It is well known that BME280's tend to self-warm and report higher than expected temperatures.  The tolerance of the BME280 tensor is +/-1C, however when added to heating it isn't uncommon to see temperatures as much as 1.8C higher than ambient.  You should add adjustments to your code after testing in the environment you will use the sensor using a reliable thermometer.  Please do not report excessive temps as a Mongoose bug.
+For I2C, the Sensor Address is very important, the Adafruit BME280 uses address 0x77, many generic BME280's utilize 0x76.  If you are having trouble, try switching addresses or consult your datasheet.
 
-Tested using Adafruit BME280 and Adafruit Huzzah32 (Pins 22 and 23).
+It is well known that BME280's tend to self-warm and report higher than expected temperatures.  The tolerance of the BME280 tensor is +/-1C, however when added to heating it isn't uncommon to see temperatures as much as 1.8C higher than ambient.  You should add adjustments to your code after testing in the environment you will use the sensor using a reliable thermometer.  Please do not report excessive temps as a Mongoose bug.
