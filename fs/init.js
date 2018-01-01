@@ -19,7 +19,7 @@ if (bme.begin(sens_addr) === 0) {
   print('Cant find a sensor');
 } else {
   // This function reads data from the BME280 sensor every 2 seconds
-  Timer.set(2000 /* milliseconds */, true /* repeat */, function() {
+  Timer.set(2000 /* milliseconds */, Timer.REPEAT, function() {
     print('Temperature:', bme.readTemperature(), '*C');
     print('Humidity:', bme.readHumidity(), '%RH');
     print('Pressure:', bme.readPressure(), 'hPa');
